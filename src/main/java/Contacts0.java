@@ -3,14 +3,13 @@ import java.util.Scanner;
 
 public class Contacts0 {
 
+    public static final int MAX_ENTITIES = 100;
+    public static final int MAX_PARAMETERS = 3;
+
     public static void main(String[] args) {
         final Scanner SCANNER = new Scanner(System.in);
-        System.out.println("|| ===================================================");
-        System.out.println("|| ===================================================");
-        System.out.println("|| Contacts - Version 0.0");
-        System.out.println("|| Welcome to Contacts!");
-        System.out.println("|| ===================================================");
-        String[][] list = new String[100][3];
+        printWelcomeScreen();
+        String[][] list = new String[MAX_ENTITIES][MAX_PARAMETERS];
         int count = 0;
         while (true) {
             System.out.print("|| " + "Enter command: ");
@@ -30,11 +29,11 @@ public class Contacts0 {
                     String[] decodeResult = null;
                     final String matchAnyPersonDataPrefix = "p/" + '|' + "e/";
                     final String[] splitArgs = commandArgs.trim().split(matchAnyPersonDataPrefix);
-                    if (splitArgs.length == 3 // 3 arguments
+                    if (splitArgs.length == MAX_PARAMETERS // 3 arguments
                             && !splitArgs[0].isEmpty() // non-empty arguments
                             && !splitArgs[1].isEmpty()
                             && !splitArgs[2].isEmpty()) {
-                        final String[] person1 = new String[3];
+                        final String[] person1 = new String[MAX_PARAMETERS];
                         final int indexOfPhonePrefix = commandArgs.indexOf("p/");
                         final int indexOfEmailPrefix = commandArgs.indexOf("e/");// name is leading substring up to first data prefix symbol
                         int indexOfFirstPrefix = Math.min(indexOfEmailPrefix, indexOfPhonePrefix);
@@ -92,7 +91,7 @@ public class Contacts0 {
                     feedback = String.format("%1$d persons found!", count);
                     break;
                 case "clear":
-                    list = new String[100][3];
+                    list = new String[MAX_ENTITIES][MAX_PARAMETERS];
                     count = 0;
                     feedback = "Contacts have been cleared!";
                     break;
@@ -144,6 +143,14 @@ public class Contacts0 {
                 System.out.println("|| " + m);
             }
         }
+    }
+
+    private static void printWelcomeScreen() {
+        System.out.println("|| ===================================================");
+        System.out.println("|| ===================================================");
+        System.out.println("|| Contacts - Version 0.0");
+        System.out.println("|| Welcome to Contacts!");
+        System.out.println("|| ===================================================");
     }
 
 }
