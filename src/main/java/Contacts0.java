@@ -3,15 +3,13 @@ import java.util.Scanner;
 
 public class Contacts0 {
 
+    public static final int MAX_ENTITIES = 100;
+
     public static void main(String[] args) {
         final Scanner SCANNER = new Scanner(System.in);
-        System.out.println("|| ===================================================");
-        System.out.println("|| ===================================================");
-        System.out.println("|| Contacts - Version 0.0");
-        System.out.println("|| Welcome to Contacts!");
-        System.out.println("|| ===================================================");
-        String[][] list = new String[100][3];
-        int count = 0;
+        printWelcomeMessage();
+        String[][] list = new String[MAX_ENTITIES][3];
+        int count = 0;  
         while (true) {
             System.out.print("|| " + "Enter command: ");
             String inputLine = SCANNER.nextLine();
@@ -144,6 +142,14 @@ public class Contacts0 {
                 System.out.println("|| " + m);
             }
         }
+    }
+
+    private static void printWelcomeMessage() {
+        System.out.println("|| ===================================================");
+        System.out.println("|| ===================================================");
+        System.out.println("|| Contacts - Version 0.0");
+        System.out.println("|| Welcome to Contacts!");
+        System.out.println("|| ===================================================");
     }
 
 }
