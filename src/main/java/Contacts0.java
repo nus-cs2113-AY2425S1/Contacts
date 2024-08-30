@@ -3,14 +3,14 @@ import java.util.Scanner;
 
 public class Contacts0 {
 
+    public static final int MAX_ENTITIES = 100;
+    public static final int CONTACT_COUNT = 3;
+    public static final String SEPARATOR = "===================================================";
+
     public static void main(String[] args) {
         final Scanner SCANNER = new Scanner(System.in);
-        System.out.println("|| ===================================================");
-        System.out.println("|| ===================================================");
-        System.out.println("|| Contacts - Version 0.0");
-        System.out.println("|| Welcome to Contacts!");
-        System.out.println("|| ===================================================");
-        String[][] list = new String[100][3];
+        printWelcome();
+        String[][] list = new String[MAX_ENTITIES][CONTACT_COUNT];
         int count = 0;
         while (true) {
             System.out.print("|| " + "Enter command: ");
@@ -92,7 +92,7 @@ public class Contacts0 {
                     feedback = String.format("%1$d persons found!", count);
                     break;
                 case "clear":
-                    list = new String[100][3];
+                    list = new String[MAX_ENTITIES][CONTACT_COUNT];
                     count = 0;
                     feedback = "Contacts have been cleared!";
                     break;
@@ -113,8 +113,8 @@ public class Contacts0 {
                     break;
                 case "exit":
                     for (String m1 : new String[]{"Exiting Contacts... Good bye!",
-                            "===================================================",
-                            "==================================================="}) {
+                            SEPARATOR,
+                            SEPARATOR}) {
                         System.out.println("|| " + m1);
                     }
                     System.exit(0);
@@ -140,10 +140,18 @@ public class Contacts0 {
                             + String.format("\tExample: %1$s", "help")));
                     break;
             }
-            for (String m : new String[]{feedback, "==================================================="}) {
+            for (String m : new String[]{feedback, SEPARATOR}) {
                 System.out.println("|| " + m);
             }
         }
+    }
+
+    private static void printWelcome() {
+        System.out.println("|| " + SEPARATOR);
+        System.out.println("|| " + SEPARATOR);
+        System.out.println("|| Contacts - Version 0.0");
+        System.out.println("|| Welcome to Contacts!");
+        System.out.println("|| " + SEPARATOR);
     }
 
 }
