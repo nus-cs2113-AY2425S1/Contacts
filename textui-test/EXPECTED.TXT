@@ -6,7 +6,7 @@
 || Enter command: || [Command entered:help]
 || add: Adds a person to contacts.
 || 	Parameters: NAME p/PHONE_NUMBER e/EMAIL
-|| 	Example: add John Doe p/98765432 e/johnd@gmail.com
+|| 	Example: add John Doe p/987532 e/johnd@gmail.com
 || 
 || list: Displays all persons as a list with index numbers.
 || 	Example: list
