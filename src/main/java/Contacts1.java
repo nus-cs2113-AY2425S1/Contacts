@@ -320,7 +320,7 @@ public class Contacts1 {
      *
      * @return full line entered by the user
      */
-    private static String getUserInput() {
+    private static String  getUserInput() {
         System.out.print(LINE_PREFIX + "Enter command: ");
         String inputLine = SCANNER.nextLine();
         // silently consume all blank and comment lines
