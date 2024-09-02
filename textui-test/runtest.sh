@@ -6,6 +6,7 @@ then
     mkdir ../bin
 fi
 
+
 # delete output from previous run
 if [ -e "./ACTUAL.TXT" ]
 then
