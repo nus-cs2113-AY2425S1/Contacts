@@ -7,7 +7,6 @@ import java.util.Scanner;
  **/
 public class Contacts1 {
 
-
     /**
      * Version info of the program.
      */
@@ -195,7 +194,7 @@ public class Contacts1 {
      * @param userInputString  raw input from user
      * @return  feedback about how the command was executed
      */
-    private static String executeCommand(String userInputString) {
+    private static String  executeCommand(String userInputString) {
         final String[] commandTypeAndParams = splitCommandWordAndArgs(userInputString);
         final String commandType = commandTypeAndParams[0];
         final String commandArgs = commandTypeAndParams[1];
