@@ -596,7 +596,7 @@ public class Contacts1 {
         return !phone.isEmpty();
         //TODO: implement a better validation
     }
-
+// test
     /**
      * Returns true if the given string is a legal person email
      *
